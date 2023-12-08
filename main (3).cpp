@@ -1,0 +1,49 @@
+#include <iostream>
+#include <algorithm>
+#include<utility>
+#include<vector>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    int num;
+    double maxSpeed=0.0;
+    double currSpeed;
+    cin>>num;
+    vector<pair<double,double>> list(num);
+    pair<double,double> timeDist;
+    
+    
+    for (int i = 0; i < num; i++){
+        cin>>timeDist.first;
+        cin>>timeDist.second;
+        list[i]=timeDist;
+        
+        
+    }
+    
+    sort(list.begin(),list.end());
+    
+    for (int x = 0; x < num-1; x++){
+        currSpeed= (abs(list[x+1].second-list[x].second))/(list[x+1].first-list[x].first);
+        if(currSpeed > maxSpeed){
+            maxSpeed=currSpeed;
+        }
+        
+        
+        
+    }
+
+    cout<<setprecision(9)<<maxSpeed;
+    
+    
+      
+    
+        
+        
+    
+        
+
+    return 0;
+}
